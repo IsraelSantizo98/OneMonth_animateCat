@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            flex-direction: column;
+        }
+        #container{
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            flex-grow: 0;
+            width: 50%;
+            height: 50%;
+            /* flex-direction: column; */
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+        }
+        .box{
+            /* display: flex;
+            flex-wrap: wrap; */
+            /* border: 1px solid black; */
+            width: 100px;
+            height: 75px;
+            background-image: url('http://placekitten.com/g/75/100/');
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <section class="main">
+        <h1>Animate CATS</h1>
+        <div id="container" >
+            <!-- <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div> -->
+        </div>
+    </section>
+    <script>
+        var x;
+        for(x = 0; x < 24; x++){
+            setTimeout(function(){
+                var box = document.createElement('div');
+                box.className = ('box');
+                //console.log(box);
+                document.getElementById('container').appendChild(box);
+            
+            },500*x)
+        }
+    </script>
+</body>
+</html>
